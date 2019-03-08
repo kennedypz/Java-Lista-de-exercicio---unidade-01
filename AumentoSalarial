@@ -1,0 +1,22 @@
+package br.edu.unipe.aumentosalarial;
+
+import java.util.Scanner;
+
+public class AumentoSalarial {
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+		float salario = 0, percentualaumento = 0, novosalario = 0;
+		
+		System.out.print("Informe o seu salario atual: R$ ");
+		salario = input.nextFloat();
+		
+		System.out.println("Informe o percentual de aumento: ");
+		percentualaumento = input.nextInt();
+		
+		novosalario = salario + (salario * (percentualaumento / 100));
+		System.out.printf("Seu salario ira aumentar em R$ %.2f e seu novo salario sera de R$ %.2f",(percentualaumento/100)*salario, novosalario);
+		input.close();
+		
+	}
+}
