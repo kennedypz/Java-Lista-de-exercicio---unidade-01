@@ -1,0 +1,25 @@
+package br.edu.unipe.parouimpar;
+
+import java.util.Scanner;
+
+public class ParOuImpar {
+	public static void main(String[] args) {
+		int i = 0, numero = 0;
+		
+		Scanner input = new Scanner(System.in);
+		
+		for(i = 0; i < 10; i++) {
+			System.out.println("Informe um numero para saber se ele e par ou impar: ");
+			numero = input.nextInt();
+			
+			if((numero % 2) == 0) {
+				System.out.printf("O numero %d e par.\n\n", numero);
+			}
+			else {
+				System.out.printf("O numero %d e impar.\n\n", numero);
+			}
+		}
+		
+		input.close();
+	}
+}
