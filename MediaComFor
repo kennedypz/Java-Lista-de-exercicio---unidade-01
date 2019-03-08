@@ -1,0 +1,44 @@
+package exercicios.mediacomfor;
+
+import java.util.Scanner;
+
+public class MediaComFor {
+	public static void main(String[] args) {
+		
+		float nota1 = 0, nota2 = 0, mediaaluno = 0, mediaturma = 0, i = 0;
+		int reprovados = 0, aprovados = 0, exame = 0;
+		
+		Scanner input = new Scanner(System.in);
+		
+		for(i = 0; i < 6; i++) {
+			
+			System.out.println("Informe a primeira nota: ");
+			nota1 = input.nextFloat();
+			
+			System.out.println("Informe a segunda nota: ");
+			nota2 = input.nextFloat();
+			
+			mediaaluno = (nota1 + nota2) / 2;
+			mediaturma += mediaaluno;
+			
+			if(mediaaluno >= 0 && mediaaluno < 3) {
+				System.out.printf("Reprovado com media %.2f.\n\n", mediaaluno);
+				reprovados++;
+			}
+			else if(mediaaluno >= 3 && mediaaluno <= 7) {
+				System.out.printf("Exame com media %.2f.\n\n", mediaaluno);
+				exame++;
+			}
+			else if(mediaaluno > 7) {
+				System.out.printf("Aprovado com media %.2f.\n\n", mediaaluno);
+				aprovados++;
+			}
+			else {
+				System.out.println("Pelo menos umas das notas inseridas apresenta valor invalido. Por favor, utilize somente numeros de 0 a 10");
+			}
+			
+		}
+		System.out.printf("A media da turma foi %.2f.\n%d alunos foram aprovados.\n%d alunos ficaram no exame.\n%d alunos foram reprovados.\n\n", (mediaturma/6), aprovados, exame, reprovados);
+		input.close();
+	}
+}
