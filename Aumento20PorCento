@@ -1,0 +1,42 @@
+package exercicios.aumento20porcento;
+
+import java.util.Scanner;
+
+public class Aumento20PorCento {
+	public static void main(String[] args) {
+		String nome = "";
+		float salario = 0;
+		
+		Scanner input = new Scanner(System.in);
+		
+		while(!(nome.equals("fim"))) {
+			
+			System.out.println("Funcionario: ");
+			nome = input.next();
+			
+			if((nome.equals("fim"))) {
+				System.out.println("Termino da execucao do programa.");
+			}
+			
+			else {
+			
+				System.out.print("Informe seu salario: R$");
+				salario = input.nextFloat();
+				
+				if(salario > 0 && salario < 500) {
+					salario += salario *0.2;
+					System.out.printf("Seu novo salario sera de R$ %.2f\n\n", salario);
+				}
+				
+				else if(salario >= 500) {
+					System.out.println("Nao ha alteracoes salariais.\n");
+				}
+				
+				else {
+					System.out.println("voce trabalha de graca ou paga para trabalhar?");
+				}
+			}
+		}
+		input.close();
+	}
+}
