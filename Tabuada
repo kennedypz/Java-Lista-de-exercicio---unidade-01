@@ -1,0 +1,38 @@
+package exercicios.tabuada;
+
+import java.util.Scanner;
+
+public class Tabuada {
+	public static void main(String[] args) {
+		int tabuadade = 0, i = 1, operacao = 0, sair = 1;
+		
+		Scanner input = new Scanner(System.in);
+		
+		while(sair == 1) {
+			System.out.println("Informe qual tabuada deseja saber:\n1 - Soma\n2 - Multiplicacao\n");
+			operacao = input.nextInt();
+			
+			System.out.println("De qual numero deseja ver essa tabuada?");
+			tabuadade = input.nextInt();
+			
+			if (operacao == 1) {
+				for(i = 1; i <= 10; i++) {
+						System.out.printf("%d + %d = %d\n", i, tabuadade, (i + tabuadade));
+				}
+			}
+			else if (operacao == 2) {
+				for(i = 1; i <= 10; i++) {
+						System.out.printf("%d x %d = %d\n", i, tabuadade, (tabuadade * i));
+				}
+			}
+			else {
+				System.out.println("Opcao invalida.\n");
+			}
+			
+			System.out.println("\nDeseja saber outra tabuada?\n1 - Sim\n2 - Nao\n");
+			sair = input.nextInt();
+		}
+		System.out.println("Programa encerrado.");
+		input.close();
+	}
+}
