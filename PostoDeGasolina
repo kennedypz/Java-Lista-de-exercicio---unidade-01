@@ -1,0 +1,21 @@
+package exercicios.postodegasolina;
+
+import java.util.Scanner;
+
+public class PostoDeGasolina {
+	public static void main(String[] args) {
+		float litros = 0;
+		
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Quantos litros de gasolina? ");
+		litros = input.nextFloat();
+
+		System.out.printf("Gasolina: R$%.2f por %.2f litros\nRefrigerantes: R$6,00 por 2 refrigerantes.\nTotal: R$%.2f\n",(litros * 2.50), litros,
+				((litros * 2.50) + 6)); /*optei por não declarar uma variavel refrigerante para economizar
+				espaço na memoria. Estou ciente de que em um programa de maior porte seria necessario a delcaração,
+				pois facilitaria possiveis alterações no valor do refrigerante*/
+		
+		input.close();
+	}
+}
