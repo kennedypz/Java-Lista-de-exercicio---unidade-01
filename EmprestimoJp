@@ -1,0 +1,25 @@
+package exercicios.emprestimojp;
+
+import java.util.Scanner;
+
+public class EmprestimoJp {
+	public static void main(String[] args) {
+		float salario = 0, valordaprestacao = 0;
+		
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Informe seu salario: R$");
+		salario = input.nextFloat();
+		
+		System.out.printf("Informe o valor da prestacao: R$");
+		valordaprestacao = input.nextFloat();
+		
+		if(valordaprestacao <= (salario * 0.3)) {
+			System.out.println("\nO emprestimo pode ser concedido.");
+		}
+		else {
+			System.out.println("\nO emprestimo nao pode ser concedido");
+		}
+		input.close();
+	}
+}
