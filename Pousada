@@ -1,0 +1,37 @@
+package exercicios.pousada;
+
+import java.util.Scanner;
+
+public class Pousada {
+	public static void main(String[] args) {
+		int dias = 0, totalcliente = 0, totallucro = 0, diaria = 40, servicosdiarios = 0;
+		String nome = "";
+		
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Nome: ");
+		nome = input.next();
+		
+		while(!(nome.equals("fim"))) {
+			
+			System.out.println("Informe quantos dias passou na pousada: ");
+			dias = input.nextInt();
+			
+			if(dias < 10) {
+				servicosdiarios = 15;
+			}
+			else {
+				servicosdiarios = 8;
+			}
+			
+			totalcliente = servicosdiarios + (dias * diaria);
+			totallucro += totalcliente;
+			System.out.printf("O total da conta e de R$%d\n\n", totalcliente);
+			
+			System.out.println("Nome: ");
+			nome = input.next();
+		}
+		System.out.printf("O lucro total da pousada foi de R$%d\n", totallucro);
+		input.close();
+	}
+}
